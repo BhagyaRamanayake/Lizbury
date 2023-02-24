@@ -1,0 +1,435 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,700;1,400;1,500&display=swap');
+
+:root{
+    --main-color:#d3ad7f;
+    --black:#13131a;
+    --bg:#010103;
+    --border:.1rem solid rgba(255,255,255,.3);
+}
+
+*{
+    font-family: 'Roboto', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html{
+    font-size: 62.5%; /*Change the font size of the home...etc in nav bar*/
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar{
+    width: .8rem;
+}
+
+html::-webkit-scrollbar-track{
+    background:transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: #fff;
+    border-radius: 5rem;
+}
+
+body{
+    background: var(--bg); /*Background color of the webpage*/
+}
+section{
+    padding:2rem 7%;
+}
+
+.heading{
+    text-align: center;
+    color:#fff;/*The color of US in the webpage changes*/
+    text-transform: uppercase;
+    padding-bottom: 3.5rem;
+    font-size: 4rem;
+}
+
+.heading span{
+    color: var(--main-color);
+    text-transform:uppercase;
+}
+
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding:.9rem 3rem;/*The checkout button*/
+    font-size: 1.7rem;
+    color:#fff;
+    background: var(--main-color);/*The box colour of the checkout*/
+    cursor: pointer;
+}
+
+.btn:hover{
+    letter-spacing: .2rem;/*When mouse moves over the checkout*/
+}
+
+.header{
+    background: var(--bg); /*Navigation bar*/
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:1.5rem 7%;
+    border-bottom: var(--border);
+    position: fixed;
+    top:0; left: 0; right: 0;
+    z-index: 1000;
+
+}
+
+.header .logo img{
+    height: 6rem; /*height of the logo in navbar*/
+}
+
+.header .navbar a{
+    margin:0 1rem;
+    font-size: 1.6rem;/*Changes the size of the home....etc in navbar*/
+    color:#fff;/*The color of the home...etc in navbar*/
+}
+
+.header .navbar a:hover{
+    color:var(--main-color);/*The colour which changes from the words home...etc when mouse moves over them*/
+    border-bottom: .0rem solid var(--main-color);
+    padding-bottom: .5rem;
+}
+
+
+.header .icons div{
+    color:#fff;
+    cursor: pointer;
+    font-size: 2.5rem;
+    margin-left: 2rem;
+}
+
+.header .icons div:hover{
+    color:var(--main-color);/*The colour of the cart, search....etc changes when mouse moves over them*/
+}
+
+#menu-btn{
+    display: none;
+}
+
+.header .search-form{                   /*THE SMALL SEARCH ICON ON THE SEARCH BAR*/
+    position: absolute;
+    top:115%; right: 7%;
+    background:#fff;/*The small square where the search icon on the search bar colour changes*/
+    width: 50rem;
+    height: 5rem;
+    display: flex;
+    align-items:center;
+    transform: scaleY(0);
+    transform-origin: top;
+}
+
+.header .search-form.active{
+    transform: scaleY(1);/*The size of the search bar when the webpage is responsive*/
+}
+
+.header .search-form input{
+    height: 100%;
+    width: 100%;
+    font-size: 1.6rem;
+    color:var(--black);/*The color of the letters that we type in search bar*/
+    padding:1rem;
+    text-transform: none;
+}
+
+.header .search-form label{
+    cursor: pointer;
+    font-size: 2.2rem;
+    margin-right: 1.5rem;
+    color:var(--black);/*The color of the search icon on the search bar*/
+}
+
+.header .search-form label:hover{
+    color:var(--main-color);/*The colour of the serach icon changes when the mouse is moved over*/
+}
+
+.header .cart-items-container{
+    position: absolute;
+    top:100%; right: -100%;
+    height: calc(100vh - 9.5rem);
+    width: 35rem;
+    background: #fff; /*The background colour of the cart list changes*/
+    padding:0 1.5rem;
+}
+
+.header .cart-items-container.active{
+    right: 0;
+}
+
+.header .cart-items-container .cart-item{
+    position: relative;
+    margin:2rem 0;
+    display: flex;
+    align-items:center;
+    gap:1.5rem;/*The gap between the images that are in the cart list*/
+}
+
+.header .cart-items-container .cart-item .fa-times{
+    position:absolute;
+    top:1rem; right: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--black);/*The color of the crosses in the cart list*/
+}
+
+.header .cart-items-container .cart-item .fa-times:hover{
+    color:var(--main-color);/*The color of the crosses in the cart list changes when the mouse moves over*/
+}
+
+.header .cart-items-container .cart-item img{
+    height:7rem;
+}
+
+.header .cart-items-container .cart-item .content h3{
+    font-size: 2rem;
+    color:var(--black);/*The color of the cart items word*/
+    padding-bottom: .5rem;
+}
+
+.header .cart-items-container .cart-item .content .price{
+    font-size: 1.5rem;
+    color:var(--main-color);/*The color of the prices*/
+    
+}
+
+.header .cart-items-container .btn{
+    width: 100%;/*Checkout button's size*/
+    text-align: center;
+}
+
+
+
+
+.about .row{
+    display: flex;
+    align-items: center;
+    background:var(--black);/*The background colour of the about box*/
+    flex-wrap: wrap;
+}
+
+.about .row .image{
+    flex: 1 1 45rem;/*the size of the image in about*/
+}
+
+.about .row .image img{
+    width: 100%;
+}
+
+.about .row .content{
+    flex:1 1 45rem;
+    padding: 2rem;/*the border size of the image in about*/
+}
+
+.about .row .content h3{
+    font-size: 3rem;
+    color: #fff;/*The colour of WHAT MAKES OUR.....*/
+}
+
+.about .row .content p{
+    font-size: 1.6rem;
+    color:#ccc;/*The colour of the para in about*/
+    padding:1rem 0;
+    line-height: 1.8;
+}
+
+
+
+
+
+.contact .row{
+    display: flex;
+    background:var(--black);/*the color of the contact box*/
+    flex-wrap: wrap;
+    gap:1rem;
+}
+
+.contact .row .map{
+    flex:1 1 45rem;
+    width:100%;
+    object-fit: cover;
+}
+
+.contact .row form{
+    flex:1 1 45rem;
+    padding:5rem 2rem;
+    text-align: center;
+}
+
+.contact .row form h3{
+    text-transform: uppercase;/*The tect type in GET IN TOUCH*/
+    font-size: 3rem;
+    color:#fff;
+}
+
+.contact .row form .inputBox{
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  background:var(--bg);/*the colour of the name,email....etc box in CONTACT Us*/
+  border:var(--border);
+}
+
+.contact .row form .inputBox span{
+  color:#fff;/*the color of the icons in the contact us boxes*/
+  font-size: 2rem;
+  padding-left: 2rem;
+}
+
+.contact .row form .inputBox input{
+  width: 100%;
+  padding:2rem;
+  font-size: 1.7rem;
+  color:#fff;/*The colour of the letters that is being types in thoses boxes*/
+  text-transform: none;
+  background: none;
+}
+
+
+
+.footer{
+    background:var(--black);
+    text-align: center;
+}
+
+.footer .share{
+    padding:1rem 0;
+}
+
+.footer .share a{
+height: 5rem;
+width: 5rem;
+line-height: 5rem;
+font-size: 2rem;
+color:#fff;
+border:var(--border);
+margin:.3rem;
+border-radius: 50%;
+}
+.footer  .share a:hover{
+    background-color:var(--main-color);
+}
+
+.footer .links{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding:2rem 0;
+    gap:1rem;
+}
+
+.footer .links a{
+    padding:0rem 1rem;
+    color:#fff;/*The colour of the word is the box of footer changes*/
+    border:var(--border);
+    font-size: 2rem;
+}
+
+.footer .links a:hover{
+    background-color:var(--main-color);/*The colour of the m=bixes in the footer changes when the mouse is moved over them*/
+}
+
+.footer .credit{
+    font-size: 2rem;
+    color: #fff;/*Credited by.....reserved.....*/
+    font-weight: lighter;
+    padding:1.5rem;
+}
+
+.footer .credit span{
+    color:var(--main-color);/*Lizbury confectionaries in footer*/
+}
+
+
+
+
+
+
+/* media queries */
+@media (max-width:991px){
+    html{
+        font-size: 55%;/*The fonsize of the webpage chjanges when the page is responsive*/
+    }
+    
+    .header{
+        padding:1.5rem 2rem;/*Responsive of the website*/
+    }
+}
+
+@media (max-width:768px){
+   #menu-btn{
+       display: inline-block;
+   }
+
+   .header .navbar{
+       position:absolute;
+       top:100%; right: -100%;
+       background: #fff;/*The colour of the box when the navbar is resposive where home...etc is*/
+       width: 20rem;
+       height: calc(100vh - 9.5rem);/*the height of the box ................"*/
+   }
+   
+   .header .navbar.active{
+       right: 0;
+   }
+
+   .header .navbar a{
+    color:var(--black);
+    display: block;
+    margin:1.5rem;
+    padding:.5rem;
+    font-size: 2rem;/*The home...etc in navbar when website is responsive*/
+   }    
+}
+
+.header .search-form{
+    width: 90%;
+    right: 2rem;/*Position size of the space bar when the webpage is responsive*/
+}
+
+@media (max-width:450px){
+    html{
+        font-size: 55%;
+    }
+}
+
+
+
+
+
+
+/* The side navigation menu */
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #111; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  }
+  
+  /* The navigation menu links */
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+ 
+
